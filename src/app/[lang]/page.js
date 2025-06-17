@@ -1,9 +1,10 @@
+import { getDictionary } from "./dictionaries";
 
 
-export default function Home() {
+
+export default async function Home({params: {lang}}) {
+  const dictionary = await getDictionary(lang);
   return (
-    <div >
-       this is our home
-    </div>
+    <div>{dictionary.followers}</div>
   );
 }
